@@ -1,0 +1,30 @@
+{
+  "name": "Canvas",
+  "version": "0.1.0",
+  "description": "Grunt",
+  "author": "Vadim",
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-cssmin": "^2.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^2.1.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-eslint": "^19.0.0",
+    "grunt-tslint": "^4.0.1",
+    "grunt-spell": "^1.0.0",
+    "tslint": "^4.5.1",
+    "grunt-hashres": "^0.4.1",
+    "grunt-react": "^0.12.3",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "grunt-ts": "^6.0.0-beta.15",
+    "typescript": "^2.2.1"
+  },
+  "scripts": {
+    "start": "grunt"
+  }
+}
