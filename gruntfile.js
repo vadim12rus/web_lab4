@@ -14,12 +14,12 @@ module.exports = function(grunt) {
             }
         },
 
-        /*concat: {
+        concat: {
             js: {
-                src: ['build/*.js'],
-                dest: 'build/script.js',
+                src: ['node_modules/systemjs-builder/node_modules/systemjs/dist/*.js'],
+                dest: 'build/system.js',
             }
-        },*/
+        },
         uglify: {
             buld: {
                 src: 'build/script.js',
@@ -100,6 +100,8 @@ module.exports = function(grunt) {
                         dest: 'build/'
                     },
 
+                 
+
                     {
                         expand: true,
                         cwd: 'node_modules/react-dom/dist/',
@@ -145,8 +147,8 @@ module.exports = function(grunt) {
             {
                 lang: 'en'
             },
-            src: ['ts/*.ts', 'css/*.css'],
-        }
+            src: ['index.html', 'ts/*.ts', 'css/*.css'],
+        },
     });
 
 
@@ -163,6 +165,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-ts');
     grunt.loadNpmTasks('grunt-spell');
-    grunt.registerTask('default', ['clean', 'spell', 'copy', 'tslint', 'ts', 'react', 'uglify', 'cssmin', 'eslint', 'clean:script', 'connect', 'hashres', 'watch']);
+    grunt.registerTask('default', ['clean', 'spell', 'copy','concat', 'tslint', 'ts', 'react', 'uglify', 'cssmin', 'eslint', 'clean:script', 'connect', 'hashres', 'watch']);
 
 };
