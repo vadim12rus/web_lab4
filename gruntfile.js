@@ -142,12 +142,13 @@ module.exports = function(grunt) {
             target: 'ts/*.ts'
         },
 
-        spell: {
-            options:
-            {
-                lang: 'en'
+        shell: {
+            options: {
+                stderr: true
             },
-            src: ['index.html', 'ts/*.ts', 'css/*.css'],
+            target: {
+                command: 'cspell ts/*.ts'
+            }
         },
     });
 
@@ -164,7 +165,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-react');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-ts');
-    grunt.loadNpmTasks('grunt-spell');
-    grunt.registerTask('default', ['clean', 'spell', 'copy','concat', 'tslint', 'ts', 'react', 'uglify', 'cssmin', 'eslint', 'clean:script', 'connect', 'hashres', 'watch']);
+    grunt.loadNpmTasks('grunt-shell');
+    grunt.registerTask('default', ['clean', 'shell', 'copy','concat', 'tslint', 'ts', 'react', 'uglify', 'cssmin', 'eslint', 'clean:script', 'connect', 'hashres', 'watch']);
 
 };

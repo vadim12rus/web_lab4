@@ -16,7 +16,7 @@ class CApplication {
         return (<HTMLInputElement> document.getElementById("shape_type")).value;
     }
 
-        public setMenuSetting(): void {
+    public setMenuSetting(): void {
             let triangleElement: HTMLElement = document.getElementById("triangle");
             let rectangleElement: HTMLElement = document.getElementById("rectangle");
             let circleElement: HTMLElement = document.getElementById("circle");

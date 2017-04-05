@@ -18,7 +18,7 @@ class CCanvas {
         let TEXT_COORDINATE_Y: number = 240;
         this.ctx.save();
         this.ctx.beginPath();
-        this.ctx.font = "20px Arial";
+        this.ctx.font = "20px";
         this.ctx.scale(1, -1);
         this.ctx.fillStyle = "#000";
         this.ctx.fillText("Perimeter = " + perimeter.toString() + " Area = " + area.toString(),

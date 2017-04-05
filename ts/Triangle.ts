@@ -47,12 +47,12 @@ class CTriangle extends CShape {
     }
 
     public calculateArea(): number {
-        let semiperimeter: number = this.calculatePerimeter() / 2;
+        let semiPerimeter: number = this.calculatePerimeter() / 2;
         let firstSide: number = this.hypot(this.x1 - this.x2, this.y1 - this.y2);
         let secondSide: number = this.hypot(this.x2 - this.x3, this.y2 - this.y3);
         let thirdSide: number = this.hypot(this.x1 - this.x3, this.y1 - this.y3);
-        let area: number = Math.sqrt(semiperimeter * (semiperimeter - firstSide) *
-                                    (semiperimeter - secondSide) * (semiperimeter - thirdSide));
+        let area: number = Math.sqrt(semiPerimeter * (semiPerimeter - firstSide) *
+                                    (semiPerimeter - secondSide) * (semiPerimeter - thirdSide));
         return Number(area.toFixed(2));
     }
 
