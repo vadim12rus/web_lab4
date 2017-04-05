@@ -50,12 +50,12 @@ module.exports = function(grunt) {
             },
             css: {
                 files: ['css/*.css'],
-                tasks: ['clean:css_min', 'spell', 'cssmin', 'hashres:css'],
+                tasks: ['clean:css_min', 'shell', 'cssmin', 'hashres:css'],
             },
 
             scripts: {
                 files: ['ts/*.ts'],
-                tasks: [ 'clean:js_min', 'spell', 'copy', 'tslint', 'ts', 'react', 'uglify', 'eslint', 'clean:script', 'hashres:scripts'],
+                tasks: [ 'clean:js_min', 'shell', 'copy', 'tslint', 'ts', 'react', 'uglify', 'eslint', 'clean:script', 'hashres:scripts'],
             },
 
             html: {
