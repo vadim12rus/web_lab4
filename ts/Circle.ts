@@ -3,8 +3,9 @@ const CIRCLE_OUTLINE_COLOR: string = "#00000";
 const CENTER_X: number = 10;
 const CENTER_Y: number = 10;
 const CIRCLE_RADIUS: number = 55;
-
-class CCircle extends CShape {
+import { CCanvas } from "./Canvas";
+import { CShape } from "./Shape";
+export class CCircle extends CShape {
     private centerX: number;
     private centerY: number;
     private radius: number;

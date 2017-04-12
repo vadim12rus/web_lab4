@@ -4,8 +4,9 @@ const RECTANGLE_X1: number = 100;
 const RECTANGLE_Y1: number = 100;
 const RECTANGLE_X2: number = -100;
 const RECTANGLE_Y2: number = -100;
-
-class CRectangle extends CShape {
+import { CCanvas } from "./Canvas";
+import { CShape } from "./Shape";
+export class CRectangle extends CShape {
     private x1: number;
     private y1: number;
     private x2: number;

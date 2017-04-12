@@ -6,8 +6,9 @@ const TRIANGLE_X2: number = 100;
 const TRIANGLE_Y2: number = 100;
 const TRIANGLE_X3: number = 100;
 const TRIANGLE_Y3: number = -100;
-
-class CTriangle extends CShape {
+import { CCanvas } from "./Canvas";
+import { CShape } from "./Shape";
+export class CTriangle extends CShape {
     private x1: number;
     private x2: number;
     private x3: number;

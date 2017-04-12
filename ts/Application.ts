@@ -1,4 +1,30 @@
-class CApplication {
+const CIRCLE_FILL_COLOR: string = "#00000";
+const CIRCLE_OUTLINE_COLOR: string = "#00000";
+const CENTER_X: number = 10;
+const CENTER_Y: number = 10;
+const CIRCLE_RADIUS: number = 55;
+const RECTANGLE_FILL_COLOR: string = "#00000";
+const RECTANGLE_OUTLINE_COLOR: string = "#00000";
+const RECTANGLE_X1: number = 100;
+const RECTANGLE_Y1: number = 100;
+const RECTANGLE_X2: number = -100;
+const RECTANGLE_Y2: number = -100;
+const TRIANGLE_FILL_COLOR: string = "#00FF00";
+const TRIANGLE_OUTLINE_COLOR: string = "#00FF00";
+const TRIANGLE_X1: number = 0;
+const TRIANGLE_Y1: number = 0;
+const TRIANGLE_X2: number = 100;
+const TRIANGLE_Y2: number = 100;
+const TRIANGLE_X3: number = 100;
+const TRIANGLE_Y3: number = -100;
+
+import { CCanvas } from "./Canvas";
+import { CCircle } from "./Circle";
+import { CRectangle } from "./Rectangle";
+import { CShape } from "./Shape";
+import { CTriangle } from "./Triangle";
+
+export class CApplication {
     private canvas: CCanvas;
     constructor() {
         this.canvas = new CCanvas();
@@ -126,8 +152,3 @@ class CApplication {
         });
     }
 }
-
-window.onload = (): void => {
-    let application: CApplication = new CApplication();
-    application.setMenuSetting();
-};

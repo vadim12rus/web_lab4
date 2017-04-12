@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 
         concat: {
             js: {
-                src: ['node_modules/systemjs-builder/node_modules/systemjs/dist/*.js'],
+                src: ['node_modules/systemjs/dist/system.js'],
                 dest: 'build/system.js',
             }
         },
@@ -25,10 +25,6 @@ module.exports = function(grunt) {
                 src: 'build/script.js',
                 dest: 'build/script.min.js'
             }
-        },
-        eslint: {
-            target: ['build/script.js']
-            //quiet: true
         },
         cssmin: {
             options: {
@@ -55,7 +51,7 @@ module.exports = function(grunt) {
 
             scripts: {
                 files: ['ts/*.ts'],
-                tasks: [ 'clean:js_min', 'shell', 'copy', 'tslint', 'ts', 'react', 'uglify', 'eslint', 'clean:script', 'hashres:scripts'],
+                tasks: [ 'clean:js_min', 'shell', 'copy', 'tslint', 'ts', 'react', 'uglify', 'clean:script', 'hashres:scripts'],
             },
 
             html: {
@@ -107,6 +103,13 @@ module.exports = function(grunt) {
                         cwd: 'node_modules/react-dom/dist/',
                         src: 'react-dom.min.js',
                         dest: 'build/'
+                    },
+
+                    {
+                        expand: true,
+                        cwd: 'node_modules/systemjs/dist/',
+                        src: '*.js',
+                        dest: 'build/'
                     }
                 ]
             }
@@ -121,15 +124,16 @@ module.exports = function(grunt) {
         },
         ts: {
             default: {
-                options: {
-                    module: 'system',
-                    target: 'es5',
-                    noImplicitAny: true,
-                    noEmitOnError: true,
-                    sourceMap: false
-                },
-                src: ['ts/Application.ts', 'ts/Canvas.ts', 'ts/IShape.ts',  'ts/Shape.ts', 'ts/Circle.ts', 'ts/Rectangle.ts', 'ts/Triangle.ts'],
+                src: ['ts/Application.ts', 'ts/Canvas.ts', 'ts/IShape.ts',  'ts/Shape.ts', 'ts/Circle.ts', 'ts/Rectangle.ts', 'ts/Triangle.ts', 'ts/main.ts'],
                 out: 'build/script.js',
+                options: {
+                    noImplicitAny: true,
+                    removeComments: true,
+                    preserveConstEnums: true,
+                    sourceMap: true,
+                    module: 'system',
+                    target: 'es5'
+                }
             }
         },
 
@@ -166,6 +170,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-ts');
     grunt.loadNpmTasks('grunt-shell');
-    grunt.registerTask('default', ['clean', 'shell', 'copy','concat', 'tslint', 'ts', 'react', 'uglify', 'cssmin', 'eslint', 'clean:script', 'connect', 'hashres', 'watch']);
+    grunt.registerTask('default', ['clean', 'shell', 'copy','concat', 'tslint', 'ts', 'react', 'uglify', 'cssmin', 'clean:script', 'connect', 'hashres', 'watch']);
 
 };

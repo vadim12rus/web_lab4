@@ -1,4 +1,4 @@
-class CCanvas {
+export class CCanvas {
     private canvas: HTMLCanvasElement;
     private ctx: CanvasRenderingContext2D ;
 

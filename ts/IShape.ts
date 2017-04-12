@@ -1,4 +1,5 @@
-interface IShape {
+import { CCanvas } from "./Canvas";
+export interface IShape {
     calculateArea(): number;
     calculatePerimeter(): number;
     setFillColor(fillColor: string): void;

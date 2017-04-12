@@ -1,4 +1,6 @@
-abstract class CShape implements IShape {
+import { CCanvas } from "./Canvas";
+import { IShape } from "./IShape";
+export abstract class CShape implements IShape {
     private fillColor: string;
     private outlineColor: string;
 
